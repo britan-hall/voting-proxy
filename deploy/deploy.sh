@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Launch the five instances (database, three Flask, proxy) with the AWS CLI.
+# Launch the eight instances (database, six Flask, proxy) with the AWS CLI.
 
 set -euo pipefail
 
@@ -23,11 +23,11 @@ aws ec2 run-instances \
   --query "Instances[].InstanceId" \
   --output text
 
-echo "launching three voting-flask"
+echo "launching six voting-flask"
 aws ec2 run-instances \
   --image-id "$AMI" \
   --instance-type t3.micro \
-  --count 3 \
+  --count 6 \
   --key-name vockey \
   --security-groups voting-flask \
   --iam-instance-profile Name=LabInstanceProfile \

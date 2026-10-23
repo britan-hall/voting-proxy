@@ -40,7 +40,7 @@ If the `git push` command fails, check the url of `origin` and make sure it poin
 CloudFormation defines a *stack* of AWS resources. For this application we need:
 
 * Three security groups (proxy, Flask, database)
-* Five EC2 instances (database, three Flask servers, proxy)
+* Eight EC2 instances (database, six Flask servers, proxy)
 
 
 The file `deploy/cloudformation.yaml` specifies those resources.
